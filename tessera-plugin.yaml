@@ -1,7 +1,7 @@
 # Needle gauge: a sensor's value as a dial with a needle, the name on top and the number under it.
 # Every field is explained in docs/MANIFEST.md of github.com/MaxGramser/tessera-plugins.
 id: needle_gauge
-version: 0.1.0
+version: 0.2.0
 api: "0.10"
 icon: gauge
 maintainer: Nekromonger
@@ -19,14 +19,16 @@ tiles:
     icon: gauge
     sizes: { min: 1x2, max: 4x4 }
     memory: 900
-    domains: [sensor, number, input_number]
+    domains: [sensor]
     attributes: [unit_of_measurement]
+    # Only sensors that measure a number: a short list in the inspector instead of every sensor in the house.
+    has_attributes: [state_class]
     example: tile_example
     preview: { title: "{name}", value: "{state}" }
     options:
       - { id: title, kind: text, label: title, hint: title_hint }
-      - { id: min, kind: number, label: min, hint: min_hint, min: -100000, max: 100000, step: 0.1, default: 0 }
-      - { id: max, kind: number, label: max, hint: max_hint, min: -100000, max: 100000, step: 0.1, default: 100 }
+      - { id: min, kind: text, label: min, hint: min_hint, default: "0" }
+      - { id: max, kind: text, label: max, hint: max_hint, default: "100" }
       - { id: decimals, kind: choice, label: decimals, default: auto,
           choices: [{ value: auto, label: decimals_auto }, { value: "0", label: decimals_0 },
                     { value: "1", label: decimals_1 }, { value: "2", label: decimals_2 }] }

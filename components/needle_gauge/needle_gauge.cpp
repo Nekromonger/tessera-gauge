@@ -16,6 +16,17 @@ static constexpr float PI = 3.14159265f;
 // The arc's resolution: the value arc moves in thousandths of the range.
 static constexpr int STEPS = 1000;
 
+// An option typed as text ("-2000", "21,5"), or a number from an older version of the manifest.
+static float read_number(JsonVariantConst value, float fallback) {
+  if (value.is<float>()) return value.as<float>();
+  std::string text = value | "";
+  for (char &ch : text)
+    if (ch == ',') ch = '.';
+  char *end = nullptr;
+  const float v = std::strtof(text.c_str(), &end);
+  return end != text.c_str() && std::isfinite(v) ? v : fallback;
+}
+
 // The tile: what it measures on top, a half-round dial with a needle in the middle, the value under it.
 // create() lays everything out once; on_state() keeps the value; on_tick() paints it, and the ui::set_* calls change a
 // part only when it differs.
@@ -26,8 +37,8 @@ class GaugeTile : public tessera::Tile {
   void create(const tessera::TileContext &c) override {
     width_ = c.width;
     height_ = c.height;
-    min_ = c.options["min"] | 0.0f;
-    max_ = c.options["max"] | 100.0f;
+    min_ = read_number(c.options["min"], 0.0f);
+    max_ = read_number(c.options["max"], 100.0f);
     if (max_ <= min_) max_ = min_ + 1;
     const char *decimals = c.options["decimals"] | "auto";
     decimals_ = std::strcmp(decimals, "auto") == 0 ? -1 : std::atoi(decimals);

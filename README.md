@@ -17,7 +17,7 @@ value stands: red when high (power, CO2) or red when low (a battery).
 
 ## Good to know
 
-- Works with sensors, number and input_number entities whose state is a number.
+- Works with sensors that measure a number (those with a state class); the inspector lists only those.
 - A value outside the range keeps the needle at the end of the dial; the number under it is the real value.
 - On a tile too small for the dial it shows the title and the value only.
 - Works on every board, the CYD included.
