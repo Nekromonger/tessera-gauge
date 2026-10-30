@@ -1,0 +1,25 @@
+# What tools/preview.py shows (docs/PREVIEW.md): a battery, a temperature and a power sensor.
+tiles:
+  - tile: gauge
+    name: Thermo Bad
+    entity: sensor.thermo_bad_battery
+    options: { colors: low_bad }
+  - tile: gauge
+    name: Wohnzimmer
+    entity: sensor.wohnzimmer_temperature
+    options: { min: 10, max: 30, decimals: "1" }
+  - tile: gauge
+    name: Netz
+    entity: sensor.grid_power
+    options: { min: 0, max: 5000, colors: high_bad }
+
+states:
+  sensor.thermo_bad_battery:
+    state: "81"
+    attributes: { friendly_name: Thermo Bad Batterie, unit_of_measurement: "%" }
+  sensor.wohnzimmer_temperature:
+    state: "21.46"
+    attributes: { friendly_name: Wohnzimmer Temperatur, unit_of_measurement: "°C" }
+  sensor.grid_power:
+    state: "3870"
+    attributes: { friendly_name: Netzbezug, unit_of_measurement: W }

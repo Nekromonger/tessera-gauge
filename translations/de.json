@@ -1,0 +1,29 @@
+{
+  "_meta": { "name": "Deutsch" },
+  "screen": {
+    "choose": "Sensor wählen",
+    "decimal_sign": ","
+  },
+  "app": {
+    "name": "Messzeiger",
+    "summary": "Ein Sensor als Zeigerinstrument: oben der Name, in der Mitte der Zeiger, darunter der Wert.",
+    "tile_name": "Messzeiger",
+    "tile_example": "Batterie 81 %",
+    "title": "Überschrift",
+    "title_hint": "Was gemessen wird, oben. Leer: der Name der Kachel, sonst der des Sensors.",
+    "min": "Kleinster Wert",
+    "min_hint": "Der Wert am linken Ende der Skala.",
+    "max": "Größter Wert",
+    "max_hint": "Der Wert am rechten Ende der Skala.",
+    "decimals": "Nachkommastellen",
+    "decimals_auto": "Automatisch",
+    "decimals_0": "Keine",
+    "decimals_1": "Eine",
+    "decimals_2": "Zwei",
+    "colors": "Farben",
+    "colors_hint": "Die Farbe des gefüllten Bogens.",
+    "colors_accent": "Akzentfarbe",
+    "colors_high_bad": "Grün, rot wenn hoch",
+    "colors_low_bad": "Grün, rot wenn niedrig (Akku)"
+  }
+}

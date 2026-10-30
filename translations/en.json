@@ -1,0 +1,29 @@
+{
+  "_meta": { "name": "English" },
+  "screen": {
+    "choose": "Choose a sensor",
+    "decimal_sign": "."
+  },
+  "app": {
+    "name": "Needle gauge",
+    "summary": "A sensor as a dial with a needle: its name on top, the needle in the middle, the value below.",
+    "tile_name": "Needle gauge",
+    "tile_example": "Battery 81 %",
+    "title": "Title",
+    "title_hint": "What it measures, on top. Empty: the tile's name, else the sensor's.",
+    "min": "Lowest value",
+    "min_hint": "The value at the dial's left end.",
+    "max": "Highest value",
+    "max_hint": "The value at the dial's right end.",
+    "decimals": "Decimals",
+    "decimals_auto": "Automatic",
+    "decimals_0": "None",
+    "decimals_1": "One",
+    "decimals_2": "Two",
+    "colors": "Colours",
+    "colors_hint": "The colour of the filled arc.",
+    "colors_accent": "Accent colour",
+    "colors_high_bad": "Green, red when high",
+    "colors_low_bad": "Green, red when low (a battery)"
+  }
+}
